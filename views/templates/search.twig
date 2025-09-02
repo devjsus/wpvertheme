@@ -1,0 +1,11 @@
+{% extends "layouts/base.twig" %}
+{% block content %}
+    {{ __('Search results by:')}} {{ search_query }}
+    {% if posts is not empty %}
+        <ul>
+            {% for post in posts %}
+                <li>{{ post.title }}</li>
+            {% endfor %}
+        <ul>
+    {% endif %}
+{% endblock %}

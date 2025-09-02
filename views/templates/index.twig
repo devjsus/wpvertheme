@@ -1,0 +1,17 @@
+{% extends "layouts/base.twig" %}
+{% block content %}
+    <article>
+        <header>
+            <h1>{{ post.title }}</h1>
+        </header>
+        <section>
+            {% if posts is not empty %}
+                <ul>
+                    {% for post in posts %}
+                        <li>{{ include('snippets/post-teaser.twig') }}</li>
+                    {% endfor %}
+                <ul>
+            {% endif %}
+        </section>
+    </article>
+{% endblock %}

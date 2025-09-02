@@ -1,0 +1,22 @@
+{
+    "template": "index",
+    "sections": {
+        "helloworld": {
+            "id": "helloworld",
+            "section_id": "hello-world",
+            "settings": [],
+            "blocks": []
+        },
+        "section_1747531609268": {
+            "section_id": "hero",
+            "settings": [],
+            "blocks": []
+        }
+    },
+    "order": [
+        "helloworld",
+        "section_1747531609268"
+    ],
+    "_originalId": "index",
+    "name": "Hola mundo"
+}

@@ -1,0 +1,37 @@
+$default_direction: row;
+$default_justify: center;
+$default_align: center;
+
+@mixin flex(
+    $flex_direction: $default_direction,
+    $justify_content: $defaul_justify,
+    $align_items: $default_align
+) {
+    display: flex;
+    flex-direction: $flex_direction;
+    justify-content: $justify_content;
+    align-items: $align_items;
+}
+
+/// Responsive Manager
+/// @access public
+/// @param {String} $breakpoint
+/// @requires $breakpoints
+@mixin respond-to($breakpoint) {
+    $raw-query: map-get($breakpoints, $breakpoint);
+  
+    @if $raw-query {
+        $query: if(
+            type-of($raw-query) == 'string',
+            unquote($raw-query),
+            inspect($raw-query)
+        );
+    
+        @media #{$query} {
+            @content;
+        }
+    } @else {
+        @error 'Not found argument `#{$breakpoint}`. '
+           + 'Please define it on map `$breakpoints` in variables file.';
+    }
+}

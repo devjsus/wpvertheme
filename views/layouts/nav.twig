@@ -1,0 +1,14 @@
+<nav>
+	<a href="{{ site.home_url }}">
+		{{ logo }}
+	</a>
+	<ul>
+		{% for item in primaryMenu.items %}
+			<li>
+				<a class="{{loop.index == primaryMenu.items|length ? 'active' : ''}}" aria-current="page" href="{{item.link}}">
+					{{item.title}}
+				</a>
+			</li>
+		{% endfor %}
+	</ul>
+</nav>

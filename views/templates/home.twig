@@ -1,0 +1,6 @@
+{% extends "layouts/base.twig" %}
+{% block content %}
+    {% for item in order %}
+        {% include "sections/" ~ sections[item].section_id ~ ".twig" ignore missing with {'section': sections[item] } %}
+    {% endfor %}
+{% endblock %}
